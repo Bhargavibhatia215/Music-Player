@@ -2,12 +2,12 @@ let allSongs = [
     {
         name : "Aashiyan",
         artist: "Pritam,Shreya Ghoshal",
-        src : "Aashiyan Barfi 320 Kbps"
+        src : "Songs/Aashiyan Barfi 320 Kbps"
     },
     {
         name : "Chaar Kadam",
         artist: "Shaan,Shreya Ghoshal",
-        src : "Chaar Kadam Pk 320 Kbps"
+        src : "Songs/Chaar Kadam Pk 320 Kbps"
     },
     {
         name : "Chitta",
