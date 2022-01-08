@@ -150,27 +150,27 @@ for(let i=0;i<allSongs.length;i++){
                         <p>${allSongs[i].artist}</p>
                     </div>
                     <audio class="${allSongs[i].src}" src="songs/${allSongs[i].src}.mp3"></audio>
-                    <span id="${allSongs[i].src}" class="duration">3:40</span>
+                    <span class="selection"></span>
                 </li>`;
     ulTag.insertAdjacentHTML("beforeend",liTag);
-    let audioDuration = ulTag.querySelector(`[id = "${allSongs[i].src}"]`);
-    let liAudioTag = ulTag.querySelector(`[class = "${allSongs[i].src}"]`);
-    liAudioTag.addEventListener("loadeddata",()=>{
-        let duration = liAudioTag.duration;
-        let min = Math.floor(duration/60);
-        let sec = Math.floor(duration%60);
-        if(sec < 10){
-            sec = `0${sec}`;
-        }
-        audioDuration.innerText = `${min}:${sec}`;
-        audioDuration.setAttribute("t-duration",`${min}:${sec}`);
-    })
+    // let audioDuration = ulTag.querySelector(`[id = "${allSongs[i].src}"]`);
+    // let liAudioTag = ulTag.querySelector(`[class = "${allSongs[i].src}"]`);
+    // liAudioTag.addEventListener("loadeddata",()=>{
+    //     let duration = liAudioTag.duration;
+    //     let min = Math.floor(duration/60);
+    //     let sec = Math.floor(duration%60);
+    //     if(sec < 10){
+    //         sec = `0${sec}`;
+    //     }
+    //     audioDuration.innerText = `${min}:${sec}`;
+    //     audioDuration.setAttribute("t-duration",`${min}:${sec}`);
+    // })
 }
 
 const allliTags = ulTag.querySelectorAll("li");
 function playNow(){
     for(let i=0;i<allliTags.length;i++){
-        let audioTag = allliTags[i].querySelector(".duration");
+        let audioTag = allliTags[i].querySelector(".selection");
         if(allliTags[i].classList.contains("playing")){
             allliTags[i].classList.remove("playing");
             let aDur = audioTag.getAttribute("t-duration");
