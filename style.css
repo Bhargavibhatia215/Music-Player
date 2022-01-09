@@ -243,5 +243,6 @@ ul li .playing{
     body{
         background-size: cover;
         background-attachment: fixed;
+        align-items: baseline;
     }
 }
