@@ -239,3 +239,9 @@ ul li .duration{
 ul li .playing{
     pointer-events: none;
 }
+@media all and (max-width: 600px)  {
+    body{
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
