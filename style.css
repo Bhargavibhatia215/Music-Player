@@ -245,4 +245,8 @@ ul li .playing{
         background-attachment: fixed;
         align-items: baseline;
     }
+    .container{
+        margin-left: -95px;
+        margin-top: 11%;
+    }
 }
