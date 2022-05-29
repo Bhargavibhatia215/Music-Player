@@ -1,4 +1,3 @@
-var isShuffle = false;
 const container = document.querySelector(".container"),
 songName = container.querySelector(".song-det .song-name"),
 songArtist = container.querySelector(".song-det .song-artist"),
@@ -39,16 +38,6 @@ function pauseMusic(){
 }
 
 function nextSong(){
-    // let random = Math.floor((Math.random()*allSongs.length)+1);
-    // do{
-    //     random = Math.floor((Math.random()*allSongs.length)+1);
-    // }while(sIndex == random);
-    // sIndex = random;
-    // if(sIndex>allSongs.length){
-    //     sIndex = 1;
-    // }
-    // loadSong(sIndex);
-    // playMusic();
     sIndex++;
     if(sIndex>allSongs.length){
         sIndex = 1;
@@ -120,16 +109,6 @@ progress.addEventListener("click",(e)=>{
     playMusic();
 
 })
-// songAudio.addEventListener("ended",()=>{
-//     let getText = shuffleBtn.innerHTML;
-//     let random = Math.floor((Math.random()*allSongs.length)+1);
-//     do{
-//         random = Math.floor((Math.random()*allSongs.length)+1);
-//     }while(sIndex == random);
-//     sIndex = random;
-//     loadSong(sIndex);
-//     playMusic();
-// })
 songAudio.addEventListener("ended",()=>{
     nextSong();
 })
@@ -153,18 +132,6 @@ for(let i=0;i<allSongs.length;i++){
                     <span class="selection"></span>
                 </li>`;
     ulTag.insertAdjacentHTML("beforeend",liTag);
-    // let audioDuration = ulTag.querySelector(`[id = "${allSongs[i].src}"]`);
-    // let liAudioTag = ulTag.querySelector(`[class = "${allSongs[i].src}"]`);
-    // liAudioTag.addEventListener("loadeddata",()=>{
-    //     let duration = liAudioTag.duration;
-    //     let min = Math.floor(duration/60);
-    //     let sec = Math.floor(duration%60);
-    //     if(sec < 10){
-    //         sec = `0${sec}`;
-    //     }
-    //     audioDuration.innerText = `${min}:${sec}`;
-    //     audioDuration.setAttribute("t-duration",`${min}:${sec}`);
-    // })
 }
 
 const allliTags = ulTag.querySelectorAll("li");
